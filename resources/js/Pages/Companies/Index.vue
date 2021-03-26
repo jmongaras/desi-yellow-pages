@@ -7,24 +7,8 @@
             <jet-dropdown-link :href="route('company.create')" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-primary hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-primary-50 active:bg-gray-50 transition ease-in-out duration-150">
                 Add Company
             </jet-dropdown-link>
-            <div>
-                <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                <table class="center">
-                <thead>
-                    <th> Id </th>
-                    <th> Name </th>
-                    <th> Action </th>
-                </thead>
-                <tbody>
-                    <tr v-for="post in companies" :key="post.id">
-                        <td>  {{ post.id }} </td>
-                        <td>  {{ post.name }} </td>  
-                    </tr>
-                </tbody>
-                </table>
-                </div>
-            </div>
         </template>
+        <list-companies :companies="companies"> </list-companies>
     </app-layout>
 </template>
 
@@ -32,6 +16,7 @@
 import AppLayout from "@/Layouts/AppLayout";
 import JetDropdownLink from "@/Jetstream/DropdownLink";
 import JetButton from "@/Jetstream/Button";
+import ListCompanies from "@/Pages/Companies/Companies";
 
 export default {
     props: ["companies"],
@@ -39,6 +24,7 @@ export default {
         AppLayout,
         JetDropdownLink,
         JetButton,
+        ListCompanies,
     },
 };
 </script>

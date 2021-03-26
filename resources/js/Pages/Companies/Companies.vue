@@ -108,10 +108,7 @@ export default {
                 this.confirmingUserDeletion = false
                 this.form.reset()
             }
-    },
-    mounted() {
-        this.getCompanies();
-    },
+    }
 };
 </script>
 <style>
