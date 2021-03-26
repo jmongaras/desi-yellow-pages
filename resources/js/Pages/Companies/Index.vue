@@ -17,7 +17,6 @@ import AppLayout from "@/Layouts/AppLayout";
 import JetDropdownLink from "@/Jetstream/DropdownLink";
 import JetButton from "@/Jetstream/Button";
 import ListCompanies from "@/Pages/Companies/Companies";
-
 export default {
     props: ["companies"],
     components: {
