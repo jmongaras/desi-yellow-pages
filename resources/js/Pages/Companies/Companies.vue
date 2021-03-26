@@ -26,12 +26,12 @@
                                     Delete
                                 </button>
                                 <button
-                                    @click="editCompany(company)"
                                     class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-600 transition ease-in-out duration-150"
                                 >
                                     Edit
                                 </button>
                             </tr>
+                           
                         </tbody>
                     </table>
                 </div>
@@ -90,12 +90,6 @@ export default {
             this.confirmingUserDeletion = true;
             var data = this.currentCompany;
             data._method = "DELETE";
-            this.$inertia.post("/company/" + data.id, data);
-            this.closeModal();
-        },
-        editCompany() {
-            this.confirmingUserDeletion = true;
-            var data = this.currentCompany;
             this.$inertia.post("/company/" + data.id, data);
             this.closeModal();
         },
