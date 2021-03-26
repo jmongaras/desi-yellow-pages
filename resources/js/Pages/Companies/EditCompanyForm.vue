@@ -1,5 +1,5 @@
 <template>
-    <jet-form-section @submitted="createCompany">
+    <jet-form-section @submitted="updateCompany">
         <template #title> Company Details </template>
 
         <div v-if="$page.flash.success" class="green">
@@ -36,7 +36,7 @@
                     type="text"
                     class="mt-1 block w-full"
                     v-model="form.name"
-                    required
+                    autofocus
                 />
                 <jet-input-error :message="form.errors.name" class="mt-2" />
             </div>
@@ -81,6 +81,7 @@ export default {
 
     data() {
         return {
+            editMode: false,
             form: this.$inertia.form({
                 name: "",
                 type: "",
@@ -90,11 +91,9 @@ export default {
     },
 
     methods: {
-        createCompany() {
-            this.form.post(route("company.store"), {
-                errorBag: "createCompany",
-                preserveScroll: true,
-            });
+        updateCompany() {
+          data._method = 'PUT';
+          this.$inertia.post('/company/update/' + data.id, data)
         },
     },
 };

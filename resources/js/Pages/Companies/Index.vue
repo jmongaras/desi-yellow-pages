@@ -19,9 +19,7 @@
                     <tr v-for="post in companies" :key="post.id">
                         <td>  {{ post.id }} </td>
                         <td>  {{ post.name }} </td>  
-                       
                     </tr>
-                    
                 </tbody>
                 </table>
                 </div>
