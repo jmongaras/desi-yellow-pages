@@ -32,7 +32,7 @@
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <jet-dropdown-link :href="route('company.index')">
-                                Add Company
+                                Companies
                             </jet-dropdown-link>
 
                             <div class="ml-3 relative">
